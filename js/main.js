@@ -82,7 +82,6 @@ class CartItem {
     // plus() - добавляет единицу товара
     // minus() - удаляет единицу товара
 }
-
 const list = new Products('.products');
 
 
