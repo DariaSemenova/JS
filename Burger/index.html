@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <H1>Выбор бургера:</H1>
+  <form action="">
+
+    <div class="wrapper form1" action="">
+      <h3 class="heading1">Выбери размер:</h3>
+      <div class="inputRadio">
+        <input type="radio" name="size" value="small" id="small">
+        <label for="small" class="inputText">
+          <p class="name">Маленький</p>
+          <span>Цена: 50р</span>
+          <span>ККал: 20</span>
+        </label>
+      </div>
+      <div>
+        <div class="inputRadio">
+          <input type="radio" name="size" value="big" id="big" checked>
+          <label for="big" class="inputText">
+            <p class="name">Большой</p>
+            <span>Цена: 100р</span>
+            <span>ККал: 40</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wrapper form2" action="">
+      <h3 class="heading2">Выбери начинку:</h3>
+      <div class="inputRadio">
+        <input type="radio" name="filling" value="salad" id="salad">
+        <label for="salad" class="inputText">
+          <p class="name">Салат</p>
+          <span>Цена: 20р</span>
+          <span>ККал: 5</span>
+        </label>
+      </div>
+      <div class="inputRadio">
+        <input type="radio" name="filling" value="cheese" id="cheese" checked>
+        <label for="cheese" class="inputText">
+          <p class="name">Сыр</p>
+          <span>Цена: 10р</span>
+          <span>ККал: 20</span>
+        </label>
+      </div>
+      <div class="inputRadio">
+        <input type="radio" name="filling" value="potatoes" id="potatoes">
+        <label for="potatoes" class="inputText">
+          <p class="name">Картофель</p>
+          <span>Цена: 15р</span>
+          <span>ККал: 10</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="wrapper form3" action="">
+      <h3 class="heading3">Выбери соус:</h3>
+      <div class="inputRadio">
+        <input type="checkbox" name="addition" value="spices" id="spices">
+        <label for="spices" class="inputText">
+          <p class="name">Приправа</p>
+          <span>Цена: 15р</span>
+          <span>ККал: 0</span>
+        </label>
+        <div class="inputText">
+        </div>
+      </div>
+      <div class="inputRadio">
+        <input type="checkbox" name="addition" value="mayo" id="mayo">
+        <label for="mayo" class="inputText">
+          <p class="name">Майонез</p>
+          <span>Цена: <span>20р</span></span>
+          <span>ККал: <span>5</span></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="total">
+      <div class="button" id="check">Собрать</div>
+      <p class="totalPrice">Итоговая цена: <span id="price"></span> </p>
+      <p class="totalCalorie ">Калорийность: <span id="calories"></span></p>
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+  <script>
+    window.onload = () => {
+      document.getElementById('check').addEventListener('click', () => {
+        let burger = new Burger('size', 'filling', 'addition');
+        console.log(burger);
+        burger.showSum('#price', '#calories');
+      })
+    }
+  </script>
+</body>
+
+</html>
